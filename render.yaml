@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: myschoolproject
+    env: static
+    buildCommand: ""
+    staticPublishPath: .

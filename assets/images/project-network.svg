@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" fill="none">
+  <defs>
+    <linearGradient id="bgNet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2C59"/>
+      <stop offset="100%" stop-color="#07162C"/>
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="600" height="350" rx="12" fill="url(#bgNet)"/>
+  <!-- Grid Lines -->
+  <path d="M0 70 H600 M0 140 H600 M0 210 H600 M0 280 H600" stroke="#1E3A8A" stroke-opacity="0.3" stroke-width="1"/>
+  <path d="M100 0 V350 M200 0 V350 M300 0 V350 M400 0 V350 M500 0 V350" stroke="#1E3A8A" stroke-opacity="0.3" stroke-width="1"/>
+  
+  <!-- Network Nodes & Connecting Lines -->
+  <line x1="150" y1="120" x2="300" y2="80" stroke="#38BDF8" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="300" y1="80" x2="450" y2="130" stroke="#38BDF8" stroke-width="2"/>
+  <line x1="300" y1="80" x2="300" y2="220" stroke="#38BDF8" stroke-width="2"/>
+  <line x1="150" y1="240" x2="300" y2="220" stroke="#38BDF8" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="450" y1="230" x2="300" y2="220" stroke="#38BDF8" stroke-width="2"/>
+
+  <!-- Shield Core -->
+  <g transform="translate(250, 140)">
+    <path d="M 50 0 L 95 20 V 65 C 95 95 50 120 50 120 C 50 120 5 95 5 65 V 20 Z" fill="url(#shieldGrad)" opacity="0.9"/>
+    <path d="M 35 60 L 45 70 L 68 45" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Node Circles -->
+  <circle cx="150" cy="120" r="14" fill="#0F2C59" stroke="#38BDF8" stroke-width="3"/>
+  <circle cx="450" cy="130" r="14" fill="#0F2C59" stroke="#38BDF8" stroke-width="3"/>
+  <circle cx="150" cy="240" r="14" fill="#0F2C59" stroke="#C0262D" stroke-width="3"/>
+  <circle cx="450" cy="230" r="14" fill="#0F2C59" stroke="#10B981" stroke-width="3"/>
+
+  <!-- Terminal Card Overlay -->
+  <rect x="70" y="270" width="460" height="50" rx="8" fill="#030A16" fill-opacity="0.85" stroke="#334155" stroke-width="1"/>
+  <circle cx="90" cy="295" r="4" fill="#EF4444"/>
+  <circle cx="104" cy="295" r="4" fill="#F59E0B"/>
+  <circle cx="118" cy="295" r="4" fill="#10B981"/>
+  <text x="140" y="300" font-family="monospace" font-size="12" fill="#38BDF8">bashir@miva:~$ python3 net_scanner.py --target 192.168.1.0/24 [SAFE]</text>
+</svg>

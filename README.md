@@ -112,7 +112,7 @@ This project is a multi-page, responsive academic portfolio and interactive stud
    - **Publish Directory:** `.` *(or leave blank)*
 5. Click **Create Static Site**.
 6. Render deploys your site in under 30 seconds with a free SSL certificate:  
-   `https://myschoolproject.onrender.com`
+   `https://mahmud-miva-portfolio.onrender.com/`
 
 ---
 

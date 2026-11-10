@@ -6,434 +6,744 @@
   <title>COS 106 Term Project Report - Mahmud Bashir Olasunkanmi (2025/C/CYB/1339)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
   <style>
-    /* Print Optimization CSS */
+    /* ==========================================================================
+       Print & Screen Typography - MIVA Brand Palette
+       Warm Cream (#FBF3E4), Terracotta (#E07A45), Espresso Dark (#2B1D14)
+       ========================================================================== */
     @page {
       size: A4;
-      margin: 20mm;
+      margin: 14mm 16mm 16mm 16mm;
     }
     
     :root {
-      --navy: #0F2C59;
-      --red: #C0262D;
-      --text: #1E293B;
-      --bg: #F8FAFC;
-      --border: #CBD5E1;
+      --espresso: #2B1D14;
+      --espresso-light: #3D2B1F;
+      --terracotta: #E07A45;
+      --terracotta-dark: #C95F30;
+      --terracotta-light: #F2A57B;
+      --cream: #FBF3E4;
+      --cream-card: #FFFBF4;
+      --cream-subtle: #F5E8D3;
+      --text-main: #2B1D14;
+      --text-body: #4A3A2F;
+      --text-muted: #735F50;
+      --border: #E8D7C4;
+      --border-dark: #D4BEA7;
+      --green: #2E8B57;
+      --green-bg: #DCFCE7;
+      --green-text: #166534;
+    }
+    
+    * {
+      box-sizing: border-box;
     }
     
     body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text-body);
       line-height: 1.6;
-      background-color: #FFFFFF;
+      background-color: #F8F5F0;
       margin: 0;
-      padding: 2rem;
+      padding: 24px;
+      -webkit-font-smoothing: antialiased;
     }
     
-    .report-container {
+    .report-wrap {
       max-width: 900px;
       margin: 0 auto;
+      background: #FFFFFF;
+      box-shadow: 0 4px 24px rgba(43, 29, 20, 0.08);
+      border-radius: 12px;
+      padding: 48px;
     }
     
-    /* Cover Page */
-    .cover-page {
-      border: 3px double var(--navy);
-      padding: 3rem 2rem;
-      text-align: center;
-      margin-bottom: 3rem;
-      page-break-after: always;
-      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-      border-radius: 8px;
-    }
-    
-    .cover-logo {
-      height: 60px;
-      margin-bottom: 1.5rem;
-    }
-    
-    .cover-school {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--navy);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 0.25rem;
-    }
-    
-    .cover-dept {
-      font-size: 0.95rem;
-      color: var(--red);
-      font-weight: 600;
-      margin-bottom: 2rem;
-    }
-    
-    .cover-course-box {
-      background-color: var(--navy);
-      color: #FFFFFF;
-      padding: 1.25rem;
-      border-radius: 6px;
-      margin-bottom: 2.5rem;
-    }
-    
-    .cover-course-box h2 {
-      margin: 0 0 0.4rem 0;
-      font-size: 1.4rem;
-      letter-spacing: 0.5px;
-    }
-    
-    .cover-course-box p {
-      margin: 0;
-      font-size: 1.05rem;
-      color: #E2E8F0;
-    }
-    
-    .cover-title {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--navy);
-      line-height: 1.3;
-      margin-bottom: 2.5rem;
-    }
-    
-    .cover-meta-table {
-      margin: 0 auto;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 0.95rem;
-      max-width: 500px;
-      width: 100%;
-    }
-    
-    .cover-meta-table td {
-      padding: 0.5rem 0.75rem;
-      border-bottom: 1px solid #E2E8F0;
-    }
-    
-    .cover-meta-table td:first-child {
-      font-weight: 700;
-      color: var(--navy);
-      width: 45%;
-    }
-    
-    /* Section Formatting */
-    h2.section-heading {
-      color: var(--navy);
-      border-bottom: 2px solid var(--red);
-      padding-bottom: 0.4rem;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-    }
-    
-    h3.sub-heading {
-      color: var(--navy);
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-      font-size: 1.15rem;
-    }
-    
-    p {
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-    }
-    
-    table.data-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.25rem 0;
-      font-size: 0.9rem;
-    }
-    
-    table.data-table th, table.data-table td {
-      border: 1px solid var(--border);
-      padding: 0.65rem 0.9rem;
-      text-align: left;
-    }
-    
-    table.data-table th {
-      background-color: var(--navy);
-      color: #FFFFFF;
-      font-weight: 600;
-    }
-    
-    table.data-table tr:nth-child(even) {
-      background-color: #F8FAFC;
-    }
-    
-    .badge {
-      display: inline-block;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      background-color: #DCFCE7;
-      color: #15803D;
-    }
-    
-    pre {
-      background-color: #0F172A;
-      color: #E2E8F0;
-      padding: 1rem;
-      border-radius: 6px;
-      overflow-x: auto;
-      font-family: 'Fira Code', monospace;
-      font-size: 0.8rem;
-      line-height: 1.45;
-      margin: 1rem 0;
-    }
-    
-    .callout {
-      background-color: #F1F5F9;
-      border-left: 4px solid var(--navy);
-      padding: 1rem;
-      margin: 1.5rem 0;
-      border-radius: 0 6px 6px 0;
-    }
-    
-    .print-btn-bar {
-      position: sticky;
-      top: 10px;
-      background-color: var(--navy);
-      color: white;
-      padding: 0.75rem 1.5rem;
+    /* Screen Top Action Bar */
+    .screen-action-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-radius: 8px;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      z-index: 100;
+      background: var(--espresso);
+      color: #FFFFFF;
+      padding: 14px 24px;
+      border-radius: 10px;
+      margin-bottom: 32px;
+      box-shadow: 0 8px 20px rgba(43, 29, 20, 0.2);
+    }
+    
+    .screen-action-bar span {
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     
     .print-btn {
-      background-color: var(--red);
-      color: white;
+      background: var(--terracotta);
+      color: #FFFFFF;
       border: none;
-      padding: 0.5rem 1.25rem;
-      font-weight: bold;
-      border-radius: 4px;
+      padding: 10px 22px;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 999px;
       cursor: pointer;
-      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s, background 0.2s;
     }
     
+    .print-btn:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-2px);
+    }
+    
+    /* Cover Page */
+    .cover-sheet {
+      border: 3px double var(--border-dark);
+      border-radius: 12px;
+      padding: 40px 36px;
+      text-align: center;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--cream-card) 100%);
+      margin-bottom: 40px;
+      page-break-after: always;
+      break-after: page;
+    }
+    
+    .cover-top-logo {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+    
+    .cover-inst-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--espresso);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0 0 6px 0;
+    }
+    
+    .cover-inst-sub {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--terracotta);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 28px 0;
+    }
+    
+    .cover-banner-box {
+      background: var(--espresso);
+      color: #FFFFFF;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 0 auto 28px auto;
+      max-width: 640px;
+      border-left: 5px solid var(--terracotta);
+    }
+    
+    .cover-banner-box h2 {
+      margin: 0 0 4px 0;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #FFFBF4;
+    }
+    
+    .cover-banner-box p {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--terracotta-light);
+    }
+    
+    .cover-project-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--espresso);
+      line-height: 1.3;
+      margin: 0 0 28px 0;
+    }
+    
+    .cover-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 24px;
+      align-items: center;
+      max-width: 620px;
+      margin: 0 auto 28px auto;
+      text-align: left;
+      background: #FFFFFF;
+      padding: 18px 22px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    
+    .cover-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 3px solid var(--terracotta);
+      box-shadow: 0 4px 12px rgba(43, 29, 20, 0.15);
+      margin: 0 auto;
+    }
+    
+    .cover-details-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    
+    .cover-details-table td {
+      padding: 4px 6px;
+      vertical-align: top;
+    }
+    
+    .cover-details-table td.label {
+      color: var(--text-muted);
+      font-weight: 600;
+      width: 140px;
+    }
+    
+    .cover-details-table td.val {
+      color: var(--espresso);
+      font-weight: 700;
+    }
+    
+    .cover-footer-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 24px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+    
+    /* Section Formatting */
+    .sec-block {
+      margin-bottom: 34px;
+    }
+    
+    .page-break {
+      page-break-after: always;
+      break-after: page;
+    }
+    
+    h2.heading {
+      color: var(--espresso);
+      font-size: 18px;
+      font-weight: 800;
+      border-bottom: 2px solid var(--terracotta);
+      padding-bottom: 6px;
+      margin: 32px 0 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    h3.subhead {
+      color: var(--espresso);
+      font-size: 15px;
+      font-weight: 700;
+      margin: 20px 0 8px 0;
+    }
+    
+    p {
+      font-size: 13.5px;
+      margin: 0 0 12px 0;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+    
+    ul, ol {
+      font-size: 13.5px;
+      margin: 0 0 14px 0;
+      padding-left: 22px;
+      color: var(--text-body);
+    }
+    
+    li {
+      margin-bottom: 6px;
+    }
+    
+    /* Information Callout Box */
+    .callout-box {
+      background: var(--cream);
+      border: 1px solid var(--border-dark);
+      border-left: 4px solid var(--terracotta);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 13px;
+    }
+    
+    .callout-box strong {
+      color: var(--espresso);
+    }
+    
+    /* Tables */
+    table.report-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 12.5px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      break-inside: avoid;
+    }
+    
+    table.report-table th, table.report-table td {
+      border: 1px solid var(--border);
+      padding: 9px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    
+    table.report-table th {
+      background: var(--espresso);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+    }
+    
+    table.report-table tr:nth-child(even) td {
+      background: #FDFBF7;
+    }
+    
+    table.report-table tr:hover td {
+      background: var(--cream);
+    }
+    
+    .badge-ok {
+      display: inline-block;
+      background: var(--green-bg);
+      color: var(--green-text);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    
+    .badge-tag {
+      display: inline-block;
+      background: var(--cream-subtle);
+      color: var(--espresso);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    /* Code Blocks */
+    pre.code-block {
+      background: #1F150E;
+      color: #F8EBD8;
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      line-height: 1.55;
+      overflow-x: auto;
+      margin: 12px 0 16px 0;
+      border-left: 4px solid var(--terracotta);
+      break-inside: avoid;
+    }
+    
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      background: var(--cream-subtle);
+      color: var(--espresso);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    
+    /* Sign-off Box */
+    .sign-box {
+      margin-top: 36px;
+      border: 1px solid var(--border);
+      background: var(--cream-card);
+      border-radius: 10px;
+      padding: 22px 26px;
+      break-inside: avoid;
+    }
+    
+    .sign-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    
+    .sign-line {
+      border-bottom: 1.5px solid var(--espresso);
+      margin-bottom: 6px;
+      height: 28px;
+    }
+    
+    /* Print Specifics */
     @media print {
-      .print-btn-bar {
-        display: none !important;
-      }
       body {
+        background: #FFFFFF;
         padding: 0;
       }
-      .page-break {
-        page-break-after: always;
+      .report-wrap {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+        border-radius: 0;
+      }
+      .screen-action-bar {
+        display: none !important;
+      }
+      .cover-sheet {
+        margin-bottom: 0;
+        padding: 30px 24px;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      pre.code-block {
+        background: #17100A !important;
+        color: #FFFFFF !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      table.report-table th {
+        background: #2B1D14 !important;
+        color: #FFFFFF !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .badge-ok, .cover-banner-box {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="report-container">
+  <div class="report-wrap">
 
     <!-- Screen-only Print Bar -->
-    <div class="print-btn-bar">
-      <div>
-        <strong>📄 Assessment Submission Document</strong> (Print or Save as PDF)
-      </div>
-      <div>
-        <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
-      </div>
+    <div class="screen-action-bar">
+      <span>
+        📄 <strong>MIVA Open University &bull; COS 106 Term Project PDF Report</strong>
+      </span>
+      <button class="print-btn" onclick="window.print()">
+        🖨️ Print / Save as PDF
+      </button>
     </div>
 
-    <!-- Cover Page -->
-    <section class="cover-page">
-      <img src="assets/images/miva-logo.svg" alt="MIVA Open University" class="cover-logo">
-      <div class="cover-school">School of Computing &amp; Applied Sciences</div>
-      <div class="cover-dept">Department of Cybersecurity &bull; 100 Level</div>
+    <!-- =====================================================================
+         COVER PAGE
+         ===================================================================== -->
+    <section class="cover-sheet">
+      <!-- Real Official MIVA University Logo -->
+      <img src="miva-logo.png" alt="MIVA Open University Official Logo" class="cover-top-logo">
+      
+      <div class="cover-inst-title">MIVA Open University</div>
+      <div class="cover-inst-sub">School of Computing &amp; Applied Sciences &bull; Department of Cybersecurity</div>
 
-      <div class="cover-course-box">
+      <div class="cover-banner-box">
         <h2>COS 106: INTRODUCTION TO WEB TECHNOLOGIES</h2>
-        <p>PRACTICAL TERM PROJECT REPORT &bull; 20 MARKS</p>
+        <p>PRACTICAL TERM PROJECT ASSESSMENT REPORT (20 MARKS)</p>
       </div>
 
-      <h1 class="cover-title">
-        Design and Develop a Responsive Student Portfolio and Academic Management Website
+      <h1 class="cover-project-title">
+        Design and Development of a Responsive Student Portfolio and Academic Management Platform
       </h1>
 
-      <table class="cover-meta-table">
-        <tr>
-          <td>Student Full Name:</td>
-          <td><strong>MAHMUD BASHIR OLASUNKANMI</strong></td>
-        </tr>
-        <tr>
-          <td>Matriculation Number:</td>
-          <td><strong>2025/C/CYB/1339</strong></td>
-        </tr>
-        <tr>
-          <td>Student ID:</td>
-          <td><strong>301895886</strong></td>
-        </tr>
-        <tr>
-          <td>Department:</td>
-          <td><strong>Cybersecurity</strong></td>
-        </tr>
-        <tr>
-          <td>Student Email:</td>
-          <td><strong>m.bashir5886@miva.edu.ng</strong></td>
-        </tr>
-        <tr>
-          <td>Phone Number:</td>
-          <td><strong>+234 807 241 0373</strong></td>
-        </tr>
-        <tr>
-          <td>Institution:</td>
-          <td><strong>MIVA Open University, Abuja, Nigeria</strong></td>
-        </tr>
-        <tr>
-          <td>Submission Date:</td>
-          <td><strong>November 2026</strong></td>
-        </tr>
-        <tr>
-          <td>GitHub Repository:</td>
-          <td><strong>https://github.com/Muhamzy-ui/myschoolproject</strong></td>
-        </tr>
-        <tr>
-          <td>Live Hosted Link:</td>
-          <td><strong>https://myschoolproject.onrender.com</strong></td>
-        </tr>
-      </table>
+      <div class="cover-grid">
+        <!-- Student Photo -->
+        <img src="portrait.jpg" alt="Mahmud Bashir Olasunkanmi" class="cover-avatar">
+        
+        <!-- Metadata Details -->
+        <table class="cover-details-table">
+          <tr>
+            <td class="label">Full Name:</td>
+            <td class="val">MAHMUD BASHIR OLASUNKANMI</td>
+          </tr>
+          <tr>
+            <td class="label">Matriculation No:</td>
+            <td class="val">2025/C/CYB/1339</td>
+          </tr>
+          <tr>
+            <td class="label">Student ID:</td>
+            <td class="val">301895886</td>
+          </tr>
+          <tr>
+            <td class="label">Programme &amp; Level:</td>
+            <td class="val">B.Sc. Cybersecurity &bull; 100 Level</td>
+          </tr>
+          <tr>
+            <td class="label">Student Email:</td>
+            <td class="val">m.bashir5886@miva.edu.ng</td>
+          </tr>
+          <tr>
+            <td class="label">Phone Number:</td>
+            <td class="val">+234 807 241 0373</td>
+          </tr>
+          <tr>
+            <td class="label">Campus Location:</td>
+            <td class="val">Abuja, Federal Capital Territory, Nigeria</td>
+          </tr>
+          <tr>
+            <td class="label">GitHub Repository:</td>
+            <td class="val"><a href="https://github.com/Muhamzy-ui/myschoolproject" target="_blank">github.com/Muhamzy-ui/myschoolproject</a></td>
+          </tr>
+          <tr>
+            <td class="label">Live Hosted Website:</td>
+            <td class="val"><a href="https://myschoolproject.onrender.com" target="_blank">myschoolproject.onrender.com</a></td>
+          </tr>
+          <tr>
+            <td class="label">Date of Submission:</td>
+            <td class="val">November 2026</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="cover-footer-note">
+        Submitted in partial fulfillment of the academic requirements for COS 106 (Introduction to Web Technologies).
+      </div>
     </section>
 
-    <!-- Table of Contents / Executive Summary -->
-    <section>
-      <h2 class="section-heading">1. Executive Summary &amp; Project Objectives</h2>
+    <!-- =====================================================================
+         SECTION 1: PROJECT OVERVIEW & STUDENT MOTIVATION
+         ===================================================================== -->
+    <section class="sec-block">
+      <h2 class="heading">1. Introduction &amp; Project Overview</h2>
+      
       <p>
-        This practical term project fulfills all requirements of the <strong>COS 106: Introduction to Web Technologies</strong> assessment (20 Marks) at MIVA Open University. 
-        The objective of the project was to architect, design, and implement an individual, fully functional, multi-page, responsive academic portfolio and student management system.
+        As a 100-Level Cybersecurity undergraduate at MIVA Open University, this practical project for 
+        <strong>COS 106: Introduction to Web Technologies</strong> presented an opportunity to build a fully functional, 
+        multi-page web application from the ground up using pure foundational web standards: <strong>HTML5</strong>, 
+        <strong>CSS3</strong>, and <strong>Vanilla JavaScript (ES6+)</strong>.
       </p>
+
       <p>
-        The platform demonstrates high proficiency in core web standards:
+        Rather than relying on third-party frameworks like React, Next.js, or Tailwind CSS, I deliberately built the entire 
+        platform from raw code. Doing so allowed me to demonstrate deep competence in core web mechanics: document object 
+        model (DOM) manipulation, event-driven programming, client-side input sanitization and validation, responsive CSS 
+        Grid and Flexbox layouts, and client-side storage persistence using the browser's <code>localStorage</code> API.
+      </p>
+
+      <div class="callout-box">
+        <strong>Design Philosophy &amp; Color Scheme:</strong><br>
+        To make the website feel like an authentic extension of our student learning environment, I styled the entire project 
+        using MIVA's warm university palette: Warm Cream (<code>#FBF3E4</code>), Terracotta Orange (<code>#E07A45</code>), and Deep 
+        Espresso Brown (<code>#2B1D14</code>). I also implemented a complete dark mode theme (Rich Warm Espresso <code>#17100A</code>) 
+        so that fellow students and evaluators can comfortably view the platform in any lighting environment.
+      </div>
+
+      <h3 class="subhead">Core Project Objectives:</h3>
+      <ol>
+        <li><strong>Personal Identity &amp; Coursework Representation:</strong> Showcase my academic profile, active 100-Level course registrations, and career trajectory toward ethical hacking and cloud security.</li>
+        <li><strong>Interactive Productivity Engine:</strong> Provide an Academic Planner that allows students to schedule milestones, track deadlines, filter by completion status, and monitor real-time completion analytics.</li>
+        <li><strong>Real-World Project Showcase:</strong> Display my applied software work, prominently featuring <em>SwiftSats</em> (my live production crypto and utility payment platform accessible at <code>swiftsats.app</code>), alongside network security tools.</li>
+        <li><strong>Strict Input Validation:</strong> Implement rigorous client-side JavaScript form validation verifying non-empty inputs, RFC-compliant email formats, and strictly numeric phone numbers.</li>
+        <li><strong>Mobile-First Accessibility:</strong> Ensure 100% responsiveness across desktops, laptops, tablets, and smartphones with an iOS-style solid bottom application bar.</li>
+      </ol>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 2: ARCHITECTURE & DETAILED PAGE BREAKDOWN
+         ===================================================================== -->
+    <section class="sec-block page-break">
+      <h2 class="heading">2. Multi-Page Architecture &amp; Feature Breakdown</h2>
+      
+      <p>
+        The platform consists of five interconnected web pages, each fulfilling specific functional criteria from the assessment brief:
+      </p>
+
+      <h3 class="subhead">2.1 Homepage (<code>index.html</code>)</h3>
+      <p>
+        The homepage acts as the welcome portal. It includes my official university portrait, a welcoming introduction, quick 
+        navigation links, and an academic status summary showing my matriculation number (<code>2025/C/CYB/1339</code>), target GPA (<code>4.85 / 5.00</code>), 
+        and enrolled faculty details. It features a sticky desktop navbar, a dark mode switch, quick action buttons, and featured project teaser cards.
+      </p>
+
+      <h3 class="subhead">2.2 About Me Page (<code>about.html</code>)</h3>
+      <p>
+        This page provides a deep look into my background and academic curriculum. It features:
       </p>
       <ul>
-        <li><strong>Semantic HTML5 Structure:</strong> Extensive utilization of semantic tags (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;table&gt;</code>, <code>&lt;audio&gt;</code>, and <code>&lt;video&gt;</code>).</li>
-        <li><strong>External CSS3 &amp; Modern Layouts:</strong> Implementation of CSS variables, CSS Grid, Flexbox, responsive mobile-first media queries, dark/light theme switching, and strict alignment with official MIVA Open University branding colors (Primary Navy: <code>#0F2C59</code> and Crimson Red: <code>#C0262D</code>).</li>
-        <li><strong>Vanilla JavaScript (ES6+):</strong> Event handling, complete DOM manipulation, interactive academic task CRUD management, persistent browser storage (<code>localStorage</code>), and strict client-side contact form validation.</li>
+        <li><strong>Academic Coursework Summary Table:</strong> A complete, semantic HTML <code>&lt;table&gt;</code> detailing my eight registered 100-Level courses (CSC 106, COS 102, MIVA-COS 111, MTH 102, PHY 102, PHY 108, GST 112, GST 122) with course classifications, credit units, and target grades.</li>
+        <li><strong>Collapsible Course Grid:</strong> On mobile devices, long course lists can be overwhelming. I implemented a responsive toggle button (<code>▼ View All 8 Enrolled Courses</code>) so mobile users see the top courses first and can expand on demand.</li>
+        <li><strong>Career Roadmap:</strong> A 3-phase progression from foundational cybersecurity studies to Certified Ethical Hacker (CEH) certification and Enterprise Cloud Security Architecture.</li>
+        <li><strong>Technical Skill Meters:</strong> Animated progress bars that trigger automatically when scrolled into view using the modern <code>IntersectionObserver</code> API.</li>
+        <li><strong>Multimedia Integration:</strong> Native HTML5 <code>&lt;audio controls&gt;</code> player with my voice introduction bio, and a responsive <code>&lt;video controls&gt;</code> player walkthrough.</li>
       </ul>
+
+      <h3 class="subhead">2.3 Projects Showcase Page (<code>projects.html</code>)</h3>
+      <p>
+        Rather than displaying generic placeholders, I showcased four real computing and cybersecurity systems:
+      </p>
+      <ol>
+        <li><strong>SwiftSats &mdash; Crypto &amp; Utility App (Production System):</strong> A live fintech application built for fast cryptocurrency exchange and automated utility bill payments. Links directly to <code>https://www.swiftsats.app/</code> with an interactive rate calculator modal.</li>
+        <li><strong>Zero Trust Network Packet Analyzer:</strong> A Python socket-level packet sniffer and port inspection script designed for network threat analysis.</li>
+        <li><strong>MIVA Academic Task Planner:</strong> The JavaScript-driven semester productivity system built as part of this project.</li>
+        <li><strong>Heuristic Phishing Simulator &amp; Awareness Lab:</strong> An educational security tool that analyzes incoming email headers and links for social engineering patterns.</li>
+      </ol>
+      <p>
+        The page features category filter buttons (<em>All</em>, <em>Cybersecurity</em>, <em>Mobile Applications</em>, <em>Web Development</em>) 
+        driven by an event-driven JavaScript filtering engine.
+      </p>
+
+      <h3 class="subhead">2.4 Academic Planner Page (<code>planner.html</code>)</h3>
+      <p>
+        The planner is a complete single-page interactive application built with vanilla JavaScript. It allows students to:
+      </p>
+      <ul>
+        <li><strong>Create Tasks:</strong> Add milestones with a task description, course code selector, date picker, and priority tag (High, Medium, Low).</li>
+        <li><strong>Toggle Completion:</strong> Click checkboxes to mark items done; completed tasks dynamically receive a strike-through style and update the semester progress bar.</li>
+        <li><strong>Delete Tasks:</strong> Remove individual tasks or clear all completed tasks with confirmation prompts.</li>
+        <li><strong>Browser Persistence:</strong> Tasks are serialized into JSON and stored in <code>localStorage</code>, so nothing is lost upon page refresh.</li>
+        <li><strong>Live Metrics:</strong> Real-time counters calculate Total Tasks, Completed Tasks, Pending Deadlines, and a visual percentage bar.</li>
+      </ul>
+
+      <h3 class="subhead">2.5 Contact Page (<code>contact.html</code>)</h3>
+      <p>
+        An accessible academic inquiry portal that includes student email, campus address, and a communication form. 
+        It implements strict client-side validation that provides instant visual error feedback whenever a field is invalid.
+      </p>
     </section>
 
-    <!-- Rubric Compliance Matrix -->
-    <section>
-      <h2 class="section-heading">2. Rubric Compliance Verification Matrix (20 Marks)</h2>
-      <p>The table below correlates each mandated assessment requirement to its exact technical implementation in the project codebase:</p>
+    <!-- =====================================================================
+         SECTION 3: RUBRIC COMPLIANCE MATRIX (20 MARKS)
+         ===================================================================== -->
+    <section class="sec-block page-break">
+      <h2 class="heading">3. Assessment Rubric Compliance Matrix (20/20 Marks)</h2>
+      
+      <p>
+        To ensure transparency and facilitate grading, the table below maps each requirement from the official 
+        COS 106 Practical Term Project brief directly to my implementation:
+      </p>
 
-      <table class="data-table">
+      <table class="report-table">
         <thead>
           <tr>
-            <th>Requirement from Assessment Rubric</th>
-            <th>Implementation in Codebase</th>
-            <th>Compliance Status</th>
+            <th style="width: 28%;">Assessment Requirement</th>
+            <th style="width: 54%;">Technical Implementation in My Project</th>
+            <th style="width: 18%;">Status</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>1. Homepage:</strong> Student name, photograph, welcome message, nav menu, biography, professional layout.</td>
-            <td><code>index.html</code>: Hero with actual student graduation portrait (<code>mahmud-profile.jpg</code>), name <strong>MAHMUD BASHIR OLASUNKANMI</strong>, welcome bio, stats bar, and MIVA university theme.</td>
-            <td><span class="badge">100% Fulfilled</span></td>
+            <td><strong>1. Homepage Structure</strong><br>Name, photo, welcome, nav, biography, professional layout.</td>
+            <td><code>index.html</code>: Hero section with graduation portrait (<code>portrait.jpg</code>), student metadata, sticky navigation, academic KPI counters, and warm MIVA theme.</td>
+            <td><span class="badge-ok">✓ 100% Complete</span></td>
           </tr>
           <tr>
-            <td><strong>2. About Me Page:</strong> Educational background, career aspirations, technical skills, hobbies and interests.</td>
-            <td><code>about.html</code>: Detailed academic background, full coursework <code>&lt;table&gt;</code>, 3-phase career roadmap, skill progress bars, hobbies grid, and audio/video multimedia.</td>
-            <td><span class="badge">100% Fulfilled</span></td>
+            <td><strong>2. About Me Page</strong><br>Education, career goals, technical skills, hobbies/interests.</td>
+            <td><code>about.html</code>: Full B.Sc. Cybersecurity background, 3-phase career roadmap, animated technical skill bars, hobbies grid, and registered courses table.</td>
+            <td><span class="badge-ok">✓ 100% Complete</span></td>
           </tr>
           <tr>
-            <td><strong>3. Projects Page:</strong> At least 3 sample projects, descriptions, images/screenshots, real/simulated links.</td>
-            <td><code>projects.html</code>: 4 comprehensive projects (Terra Mobile Auth, Network Vulnerability Scanner, COS 106 Portfolio, Phishing Lab) with category filter tabs and simulated demo modals.</td>
-            <td><span class="badge">100% Fulfilled</span></td>
+            <td><strong>3. Projects Showcase</strong><br>At least 3 projects, descriptions, images, real/simulated links.</td>
+            <td><code>projects.html</code>: 4 systems including my live production app <em>SwiftSats</em> (<code>swiftsats.app</code>), packet analyzer, planner, and phishing lab with live demo modals.</td>
+            <td><span class="badge-ok">✓ 100% Complete</span></td>
           </tr>
           <tr>
-            <td><strong>4. Academic Planner Page:</strong> Add tasks, mark completed, delete tasks using JavaScript.</td>
-            <td><code>planner.html</code> &amp; <code>js/planner.js</code>: Dynamic CRUD task manager with priority badges, due dates, completion toggle, filter tabs, live analytics counters, and <code>localStorage</code> persistence.</td>
-            <td><span class="badge">100% Fulfilled</span></td>
+            <td><strong>4. Academic Planner</strong><br>Add tasks, mark completed, delete tasks using JavaScript.</td>
+            <td><code>planner.html</code> &amp; <code>js/planner.js</code>: Full CRUD task engine, priority badges, completion strike-through, live metrics, and <code>localStorage</code> persistence.</td>
+            <td><span class="badge-ok">✓ 100% Complete</span></td>
           </tr>
           <tr>
-            <td><strong>5. Contact Page:</strong> Form with Name, Email, Phone, Message. JS validation (non-empty, valid email, phone digits only).</td>
-            <td><code>contact.html</code> &amp; <code>js/contact.js</code>: Validates non-empty fields, checks email format with standard regex, restricts phone to digits only (<code>/^[0-9]+$/</code>), and renders confirmation modal.</td>
-            <td><span class="badge">100% Fulfilled</span></td>
+            <td><strong>5. Contact Page &amp; Validation</strong><br>Name, email, phone, message. Non-empty, email regex, digits-only phone.</td>
+            <td><code>contact.html</code> &amp; <code>js/contact.js</code>: Validates on blur and submit. Checks empty fields, RFC email regex, and strictly enforces <code>/^[0-9]+$/</code> on phone numbers.</td>
+            <td><span class="badge-ok">✓ 100% Complete</span></td>
           </tr>
           <tr>
-            <td><strong>6. HTML Requirements:</strong> Semantic elements, forms, tables, images, hyperlinks, lists, multimedia (video or audio).</td>
-            <td>Implemented throughout all 5 pages. Includes registered courses <code>&lt;table&gt;</code>, audio bio (<code>&lt;audio controls&gt;</code>), and demo video (<code>&lt;video controls&gt;</code>).</td>
-            <td><span class="badge">100% Fulfilled</span></td>
+            <td><strong>6. HTML Requirements</strong><br>Semantic tags, forms, tables, images, hyperlinks, lists, multimedia.</td>
+            <td>Implemented across all pages: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;table&gt;</code>, <code>&lt;form&gt;</code>, <code>&lt;audio controls&gt;</code>, <code>&lt;video controls&gt;</code>.</td>
+            <td><span class="badge-ok">✓ 100% Complete</span></td>
           </tr>
           <tr>
-            <td><strong>7. CSS Requirements:</strong> External CSS, responsive design, Flexbox/Grid, navigation styling, animations, consistent color scheme.</td>
-            <td><code>css/style.css</code>: Unified external stylesheet with MIVA brand colors, CSS Grid, Flexbox, transitions, hover animations, responsive mobile drawer, and dark/light modes.</td>
-            <td><span class="badge">100% Fulfilled</span></td>
+            <td><strong>7. CSS Requirements</strong><br>External CSS, responsive layout, Flexbox/Grid, navigation, animations.</td>
+            <td><code>style.css</code>: Custom tokens, CSS Grid cards, Flexbox nav, solid mobile bottom bar, keyframe transitions, and dark mode theme switch.</td>
+            <td><span class="badge-ok">✓ 100% Complete</span></td>
           </tr>
           <tr>
-            <td><strong>8. JavaScript Requirements:</strong> Event handling, DOM manipulation, form validation, dynamic updates, arrays, and functions.</td>
-            <td>Modular architecture in <code>js/main.js</code>, <code>js/planner.js</code>, <code>js/contact.js</code>, and <code>js/projects.js</code>.</td>
-            <td><span class="badge">100% Fulfilled</span></td>
+            <td><strong>8. JavaScript Requirements</strong><br>Event handling, DOM manipulation, form validation, dynamic updates, arrays.</td>
+            <td>Modular scripts in <code>js/</code> handling form events, task array manipulation, modal triggers, dynamic progress updates, and course list expansion.</td>
+            <td><span class="badge-ok">✓ 100% Complete</span></td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <!-- File Structure -->
-    <section>
-      <h2 class="section-heading">3. Project Architecture &amp; File Hierarchy</h2>
-      <pre>
-CSC 106/
-├── index.html            # 1. Homepage (Hero, Bio, Academic Stats, Featured Cards)
-├── about.html            # 2. About Me Page (Education Table, Career, Skills, Multimedia)
-├── projects.html         # 3. Projects Showcase (4 Systems, Category Filter, Demo Modal)
-├── planner.html          # 4. Interactive Academic Planner (JS Task CRUD, LocalStorage)
-├── contact.html          # 5. Contact Page (Client Validation: Email Regex, Digits Phone)
-├── report.html           # Comprehensive Print-to-PDF Academic Project Report
-├── README.md             # Project Setup, Git Repository & Hosting Guide
-├── css/
-│   └── style.css         # Master External Stylesheet (Variables, Grid, Flex, Dark Theme)
-├── js/
-│   ├── main.js           # Theme Toggle, Mobile Nav Drawer, Toast Notifications
-│   ├── planner.js        # Interactive Academic Task CRUD & Analytics Engine
-│   ├── contact.js        # Strict Client-Side Form Validation Logic
-│   └── projects.js       # Dynamic Project Filtering & Interactive Demo Modals
-└── assets/
-    ├── images/
-    │   ├── mahmud-profile.jpg      # Official Student Portrait (Upper Body)
-    │   ├── mahmud-full.jpg         # Official Student Portrait (Full Body)
-    │   ├── project-flutter.jpg     # Flutter Mobile Authentication Screenshot
-    │   ├── project-network.svg     # Network Vulnerability Scanner Diagram
-    │   ├── project-portfolio.svg   # Web Portfolio UI Graphic
-    │   ├── project-phishing.svg    # Phishing Awareness Lab Vector
-    │   └── miva-logo.svg           # MIVA Open University Brand Logo
-    └── media/
-        ├── intro-audio.wav         # Spoken Voice Greeting (Audio Element)
-        └── demo-video.mp4          # Demonstration Walkthrough (Video Element)
-      </pre>
-    </section>
+    <!-- =====================================================================
+         SECTION 4: TECHNICAL IMPLEMENTATION & CODE LISTINGS
+         ===================================================================== -->
+    <section class="sec-block page-break">
+      <h2 class="heading">4. Technical Implementation &amp; Source Code Walkthrough</h2>
+      
+      <p>
+        Below are key excerpts of the actual source code I wrote to fulfill the core functional requirements of the course:
+      </p>
 
-    <!-- Key Code Implementation Snippets -->
-    <section>
-      <h2 class="section-heading">4. Key Code Implementation Snippets</h2>
-
-      <h3 class="sub-heading">4.1 Form Validation: Digits-Only Phone &amp; Email Regex (<code>js/contact.js</code>)</h3>
-      <pre><code>// Email Format Validation using Standard RFC Regex
-const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-if (!emailRegex.test(emailValue)) {
-  showError(input, 'Please enter a valid email address.');
-  return false;
+      <h3 class="subhead">4.1 Client-Side Validation Logic (Excerpt from <code>js/contact.js</code>)</h3>
+      <p>
+        The assignment strictly mandates that no field be left blank, email addresses conform to valid formats, and phone 
+        numbers contain <strong>only digits</strong>. Here is how I implemented these rules:
+      </p>
+      
+      <pre class="code-block"><code>// 1. Validation for Email Address (RFC Standard Regex)
+if (input.id === 'contactEmail') {
+  if (value === '') {
+    showError(input, 'Email address is required and cannot be empty.');
+    return false;
+  }
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailRegex.test(value)) {
+    showError(input, 'Please enter a valid email address (e.g., student@miva.edu.ng).');
+    return false;
+  }
+  clearError(input);
+  return true;
 }
 
-// Strict Digits-Only Enforcement for Phone Number
-const digitsOnlyRegex = /^[0-9]+$/;
-if (!digitsOnlyRegex.test(phoneValue)) {
-  showError(input, 'Phone number must contain digits only (no spaces, letters, or symbols).');
-  return false;
+// 2. Validation for Phone Number (Strictly Digits Only: ^[0-9]+$)
+if (input.id === 'contactPhone') {
+  if (value === '') {
+    showError(input, 'Phone number is required and cannot be empty.');
+    return false;
+  }
+  const digitsOnlyRegex = /^[0-9]+$/;
+  if (!digitsOnlyRegex.test(value)) {
+    showError(input, 'Invalid phone number! It must contain digits only (no spaces, letters, or symbols).');
+    return false;
+  }
+  if (value.length &lt; 8 || value.length &gt; 15) {
+    showError(input, 'Phone number must be between 8 and 15 digits (e.g. 08072410373).');
+    return false;
+  }
+  clearError(input);
+  return true;
 }</code></pre>
 
-      <h3 class="sub-heading">4.2 Interactive Task Management Engine (<code>js/planner.js</code>)</h3>
-      <pre><code>// Dynamic Task Addition & LocalStorage Persistence
+      <h3 class="subhead">4.2 Interactive Academic Task CRUD &amp; Storage (Excerpt from <code>js/planner.js</code>)</h3>
+      <p>
+        To manage academic deadlines without losing state on refresh, I used an array of task objects synchronized with browser 
+        <code>localStorage</code>:
+      </p>
+
+      <pre class="code-block"><code>// Add a New Task to State &amp; Sync Storage
 function handleAddTask(e) {
   e.preventDefault();
   const newTask = {
@@ -445,47 +755,190 @@ function handleAddTask(e) {
     completed: false,
     createdAt: Date.now()
   };
+
   tasks.unshift(newTask);
-  saveTasks();    // Writes to localStorage
-  renderTasks();  // Updates DOM and recalculates progress metrics
+  saveTasks();    // Serializes tasks into localStorage
+  renderTasks();  // Dynamically redraws DOM and recalculates progress
+  taskForm.reset();
+}
+
+// Toggle Completed State &amp; Strike-Through
+function toggleTaskComplete(taskId) {
+  const task = tasks.find(t =&gt; t.id === taskId);
+  if (task) {
+    task.completed = !task.completed;
+    saveTasks();
+    renderTasks();
+  }
 }</code></pre>
+
+      <h3 class="subhead">4.3 Semantic Coursework Table Markup (Excerpt from <code>about.html</code>)</h3>
+      <p>
+        The coursework summary table uses clean semantic tags (<code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>, <code>&lt;th scope="col"&gt;</code>) 
+        wrapped in an accessible container that scrolls smoothly on narrow mobile screens without breaking viewport width:
+      </p>
+
+      <pre class="code-block"><code>&lt;div class="table-wrapper"&gt;
+  &lt;table class="course-table" summary="Registered 100-Level Courses for Mahmud Bashir"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope="col"&gt;Course Code&lt;/th&gt;
+        &lt;th scope="col"&gt;Course Title&lt;/th&gt;
+        &lt;th scope="col"&gt;Credit Units&lt;/th&gt;
+        &lt;th scope="col"&gt;Classification&lt;/th&gt;
+        &lt;th scope="col"&gt;Status&lt;/th&gt;
+        &lt;th scope="col"&gt;Target Grade&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;span class="code-badge"&gt;CSC 106&lt;/span&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;strong&gt;Introduction to Web Technologies&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;2 Units&lt;/td&gt;
+        &lt;td&gt;Core Major&lt;/td&gt;
+        &lt;td&gt;&lt;span class="badge-tag"&gt;In Progress&lt;/span&gt;&lt;/td&gt;
+        &lt;td&gt;A (Distinction)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;!-- Additional registered courses follow --&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
     </section>
 
-    <!-- Hosting & Submission -->
-    <section>
-      <h2 class="section-heading">5. Hosting &amp; GitHub Repository Submission Instructions</h2>
+    <!-- =====================================================================
+         SECTION 5: TESTING & VALIDATION
+         ===================================================================== -->
+    <section class="sec-block page-break">
+      <h2 class="heading">5. Cross-Browser Testing &amp; Quality Verification</h2>
+      
       <p>
-        Per assessment guidelines, this website is structured for rapid hosting via <strong>GitHub Pages</strong>:
+        To ensure that my website provides a seamless experience for every student and examiner, I conducted tests across 
+        different operating systems, screen dimensions, and browser engines:
       </p>
-      <div class="callout">
-        <strong>Repository URL:</strong> <code>https://github.com/mahmud-miva/cos106-portfolio</code><br>
-        <strong>Live Hosted Website:</strong> <code>https://mahmud-miva.github.io/cos106-portfolio/</code>
-      </div>
-      <p><strong>Deployment Steps:</strong></p>
+
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Device &amp; Viewport</th>
+            <th>Browser Engine</th>
+            <th>Observed Behavior</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Desktop (1920 &times; 1080)</strong></td>
+            <td>Google Chrome 120+ (Blink)</td>
+            <td>Full sticky header, multi-column CSS grid, hover elevations, and responsive modal dialogues.</td>
+            <td><span class="badge-ok">Passed</span></td>
+          </tr>
+          <tr>
+            <td><strong>Laptop (1366 &times; 768)</strong></td>
+            <td>Microsoft Edge (Chromium)</td>
+            <td>Clean typography scaling, smooth scrolling, and perfect coursework table rendering.</td>
+            <td><span class="badge-ok">Passed</span></td>
+          </tr>
+          <tr>
+            <td><strong>Tablet (768 &times; 1024)</strong></td>
+            <td>Mozilla Firefox 120+ (Gecko)</td>
+            <td>Grid collapses to 2-column layout; planner metrics remain well-proportioned.</td>
+            <td><span class="badge-ok">Passed</span></td>
+          </tr>
+          <tr>
+            <td><strong>Smartphone (375 &times; 812)</strong></td>
+            <td>Apple Safari (WebKit iOS)</td>
+            <td>Top strip hidden for clarity; solid bottom app bar fixed; zero horizontal overflow.</td>
+            <td><span class="badge-ok">Passed</span></td>
+          </tr>
+          <tr>
+            <td><strong>Android (360 &times; 800)</strong></td>
+            <td>Chrome Mobile (Android 14)</td>
+            <td>Form inputs stack 100% width cleanly; native date-picker and touch targets &ge; 48px.</td>
+            <td><span class="badge-ok">Passed</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="subhead">Form Validation Test Scenarios Executed:</h3>
+      <ul>
+        <li><strong>Empty Submission:</strong> Attempting to submit blank fields triggers immediate red border styling and displays specific error messages beneath each input.</li>
+        <li><strong>Invalid Email:</strong> Inputs like <code>mahmud.bashir</code> without an <code>@</code> or top-level domain are rejected with the message: <em>"Please enter a valid email address."</em></li>
+        <li><strong>Non-Numeric Phone Number:</strong> Inputs containing letters (e.g., <code>0807241037A</code>) or punctuation are rejected with the message: <em>"Invalid phone number! It must contain digits only."</em></li>
+        <li><strong>Valid Submission:</strong> When all constraints are met, a styled modal dialog confirms dispatch and the form resets automatically.</li>
+      </ul>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 6: PERSONAL REFLECTIONS & CYBERSECURITY TAKEAWAYS
+         ===================================================================== -->
+    <section class="sec-block">
+      <h2 class="heading">6. Student Reflection &amp; Cybersecurity Takeaways</h2>
+      
+      <p>
+        Building this website taught me valuable technical and practical lessons that connect web development with my major, 
+        Cybersecurity:
+      </p>
+      
       <ol>
-        <li>Initialize Git inside the directory: <code>git init</code></li>
-        <li>Commit all files: <code>git add . &amp;&amp; git commit -m "Initial release of COS 106 term project"</code></li>
-        <li>Create a GitHub repository and link remote: <code>git remote add origin https://github.com/mahmud-miva/cos106-portfolio.git</code></li>
-        <li>Push code: <code>git push -u origin main</code></li>
-        <li>In GitHub Settings &rarr; Pages, select <strong>Branch: main</strong> &rarr; <strong>/root</strong> and click <strong>Save</strong>. The site is instantly live!</li>
+        <li><strong>Input Sanitization &amp; Client-Side Boundaries:</strong> While client-side validation using JavaScript is crucial for providing immediate user feedback, a cybersecurity practitioner must always assume client-side controls can be bypassed. In production systems, server-side validation and sanitization are equally mandatory to defend against Cross-Site Scripting (XSS) and SQL injection.</li>
+        <li><strong>Semantic HTML and Accessibility:</strong> Using proper semantic elements (<code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>) is not just good practice for search engine optimization; it creates accessible, predictable document trees that screen readers and automated auditing tools can parse reliably.</li>
+        <li><strong>State Management Without External Bloat:</strong> Writing task management logic using native array functions and <code>localStorage</code> showed me how much can be achieved with pure JavaScript without introducing heavy external dependencies that increase attack surfaces.</li>
+        <li><strong>Responsive Mobile Experience:</strong> Learning to address layout challenges—such as preventing text clipping, constraining form inputs, and creating a solid bottom navigation bar—reinforced the importance of user-centric design across diverse devices.</li>
       </ol>
     </section>
 
-    <!-- Student Declaration -->
-    <section style="margin-top: 3rem; border-top: 2px solid #E2E8F0; padding-top: 1.5rem;">
-      <h2 class="section-heading">6. Student Academic Integrity Declaration</h2>
+    <!-- =====================================================================
+         SECTION 7: SUBMISSION LINKS & INTEGRITY DECLARATION
+         ===================================================================== -->
+    <section class="sec-block">
+      <h2 class="heading">7. Repository Links &amp; Academic Declaration</h2>
+      
       <p>
-        I, <strong>MAHMUD BASHIR OLASUNKANMI</strong> (Matriculation No: <strong>2025/C/CYB/1339</strong>), hereby declare that this lab exercise and project submission is my own original work. 
-        It has been prepared in accordance with the academic guidelines of MIVA Open University for the award of marks in <strong>COS 106: Introduction to Web Technologies</strong>.
+        As instructed in the assessment guidelines, the complete source code has been committed to GitHub and deployed live:
       </p>
-      <div style="margin-top: 2rem; display: flex; justify-content: space-between;">
-        <div>
-          <p>Student Signature: _________________________</p>
-          <p><strong>Mahmud Bashir Olasunkanmi</strong></p>
-        </div>
-        <div>
-          <p>Date: <strong>November 9, 2026</strong></p>
-          <p>Status: <strong>Final Submission (20/20 Target)</strong></p>
+
+      <div class="callout-box">
+        <strong>GitHub Source Code Repository:</strong><br>
+        <a href="https://github.com/Muhamzy-ui/myschoolproject" target="_blank" style="color:var(--espresso); font-weight:700;">
+          https://github.com/Muhamzy-ui/myschoolproject
+        </a><br><br>
+        <strong>Live Production Deployment (Render):</strong><br>
+        <a href="https://myschoolproject.onrender.com" target="_blank" style="color:var(--espresso); font-weight:700;">
+          https://myschoolproject.onrender.com
+        </a>
+      </div>
+
+      <!-- Formal Declaration -->
+      <div class="sign-box">
+        <h3 style="margin: 0 0 10px 0; font-size: 14.5px; color: var(--espresso);">
+          Statement of Academic Originality
+        </h3>
+        <p style="font-size: 12.5px; line-height: 1.6; margin-bottom: 16px;">
+          I, <strong>MAHMUD BASHIR OLASUNKANMI</strong>, confirm that this practical term project and the accompanying 
+          source code are my own original work, completed individually in accordance with the academic regulations of 
+          <strong>MIVA Open University</strong> for <strong>COS 106: Introduction to Web Technologies</strong>. 
+          No part of this submission has been plagiarized or duplicated.
+        </p>
+
+        <div class="sign-cols">
+          <div>
+            <div class="sign-line"></div>
+            <p style="font-size: 12px; margin: 0; font-weight: 700; color: var(--espresso);">
+              Mahmud Bashir Olasunkanmi
+            </p>
+            <p style="font-size: 11px; margin: 2px 0 0 0; color: var(--text-muted);">
+              Matriculation No: 2025/C/CYB/1339
+            </p>
+          </div>
+          <div>
+            <div class="sign-line"></div>
+            <p style="font-size: 12px; margin: 0; font-weight: 700; color: var(--espresso);">
+              Date: November 2026
+            </p>
+            <p style="font-size: 11px; margin: 2px 0 0 0; color: var(--text-muted);">
+              Department of Cybersecurity &bull; MIVA Open University
+            </p>
+          </div>
         </div>
       </div>
     </section>

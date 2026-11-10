@@ -17,7 +17,7 @@
 ---
 
 ## 🌟 Project Overview
-This project is a multi-page, responsive academic portfolio and interactive student management system engineered using pure **HTML5**, **CSS3**, and **Vanilla JavaScript (ES6+)**. The design strictly adheres to the official color palette and branding of the **MIVA Open University Student Portal** (Primary Navy: `#0F2C59`, Crimson Red: `#C0262D`, Crisp White: `#FFFFFF`).
+This project is a multi-page, responsive academic portfolio and interactive student management system engineered using pure **HTML5**, **CSS3**, and **Vanilla JavaScript (ES6+)**. The design strictly adheres to the official color palette and branding of **MIVA Open University** (Warm Cream: `#FBF3E4`, Terracotta Accent: `#E07A45`, Espresso Dark: `#2B1D14`).
 
 ---
 
@@ -28,12 +28,13 @@ This project is a multi-page, responsive academic portfolio and interactive stud
    - Welcome message and student academic identity
    - Responsive sticky navigation bar with mobile hamburger drawer and Dark/Light mode switcher
    - Brief professional biography highlighting cybersecurity passion
-   - Academic KPI highlights: Target GPA 4.85/5.00, Enrolled Status, Registered 100L courses
+   - Academic KPI highlights: Target GPA 4.85/5.00, Enrolled Status, 8 Registered 100L courses
    - Featured projects teaser cards and quick links
 
 2. **About Me Page (`about.html`)**:
    - Detailed educational background at MIVA Open University
-   - **Semantic Coursework `<table>`** listing all registered 100-Level 1st Semester courses (COS 106, CYB 101, COS 101, MTH 101, PHY 101, GST 101, GST 103) with credit units, course classification, and target grades
+   - **Semantic Coursework `<table>`** listing all 8 registered 100-Level courses (COS 106 / CSC 106, COS 102, MIVA-COS 111, MTH 102, PHY 102, PHY 108, GST 112, GST 122) with 19 total credit units, course classification, and target grades
+   - Collapsible course grid toggle for compact mobile viewing
    - 3-Phase Career Aspirations Roadmap (Ethical Hacking & Cloud Security Architecture)
    - Categorized technical skills with animated progress bars (Web Development, Cybersecurity, Programming)
    - Extracurricular hobbies (CTFs, Mobile Flutter Design, Chess, Football)
@@ -41,10 +42,10 @@ This project is a multi-page, responsive academic portfolio and interactive stud
 
 3. **Projects Page (`projects.html`)**:
    - 4 Applied computing and cybersecurity projects:
-     1. *Terra Mobile Authentication & Security Portal* (Flutter & Dart with real mobile UI screenshot)
-     2. *Network Vulnerability Scanner & Port Auditor* (Python socket programming)
-     3. *COS 106 Student Portfolio & Planner* (Semantic HTML5, CSS Grid/Flexbox, JavaScript)
-     4. *Phishing Threat Simulator & Awareness Lab* (Heuristic threat detection)
+     1. *SwiftSats &mdash; Crypto & Utility Payment Platform* (Production Flutter & Django fintech app at `https://www.swiftsats.app/`)
+     2. *Network Vulnerability Scanner & Port Auditor* (Multi-threaded Python socket reconnaissance)
+     3. *COS 106 Student Portfolio & Academic Management Platform* (Semantic HTML5, CSS Grid/Flexbox, JavaScript)
+     4. *Phishing Threat Simulator & Awareness Lab* (Heuristic threat detection & email analysis)
    - Dynamic category filter buttons (*All*, *Cybersecurity*, *Mobile Applications*, *Web Development*)
    - Interactive modal simulation showcasing live console logs and execution specs
 

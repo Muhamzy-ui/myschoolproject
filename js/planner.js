@@ -16,7 +16,7 @@
     {
       id: 'task-1',
       title: 'Submit COS 106 Practical Term Project (Website & PDF Report)',
-      course: 'COS 106',
+      course: 'CSC 106',
       dueDate: '2026-11-15',
       priority: 'high',
       completed: true,
@@ -24,8 +24,8 @@
     },
     {
       id: 'task-2',
-      title: 'Analyze Wireshark Network Packet Traces for CYB 101 Lab',
-      course: 'CYB 101',
+      title: 'Complete COS 102 Problem Solving Algorithm Flowcharts',
+      course: 'COS 102',
       dueDate: '2026-11-18',
       priority: 'high',
       completed: false,
@@ -33,8 +33,8 @@
     },
     {
       id: 'task-3',
-      title: 'Solve MTH 101 Quadratic Equations & Polynomials Exercises',
-      course: 'MTH 101',
+      title: 'Solve MTH 102 Linear Systems & Matrix Operations Exercises',
+      course: 'MTH 102',
       dueDate: '2026-11-20',
       priority: 'medium',
       completed: false,
@@ -42,8 +42,8 @@
     },
     {
       id: 'task-4',
-      title: 'Read GST 101 Technical Communication & Essay Writing Guide',
-      course: 'GST 101',
+      title: 'Review MIVA-COS 111 Technical Certification Module I',
+      course: 'MIVA-COS 111',
       dueDate: '2026-11-22',
       priority: 'low',
       completed: false,
